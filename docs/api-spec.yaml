@@ -1,0 +1,49 @@
+openapi: 3.1.0
+info:
+  title: Clinic Operations API
+  version: 0.1.0
+servers:
+  - url: https://api.example.local
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+  /patients:
+    get:
+      summary: Bemorlar ro'yxati
+      responses:
+        '200':
+          description: Patient list
+    post:
+      summary: Yangi bemor qo'shish
+      responses:
+        '201':
+          description: Created
+  /encounters:
+    post:
+      summary: Bemorni palata/to'shakka joylash
+      responses:
+        '201':
+          description: Created
+  /consumptions:
+    post:
+      summary: Sarf kiritish (hamshira)
+      description: Ombordan kamaytiradi va sanitarka task yaratadi.
+      responses:
+        '201':
+          description: Logged
+  /inventory/alerts:
+    get:
+      summary: Kam qoldiq va muddati yaqin dori ro'yxati
+      responses:
+        '200':
+          description: Alerts
+  /reports/consumption:
+    get:
+      summary: Sarf hisobotlari (kun/oy/yil)
+      responses:
+        '200':
+          description: Report data
