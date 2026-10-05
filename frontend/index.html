@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klinika Dashboard Prototip</title>
+  <style>
+    :root { --bg: #f6f7fb; --card: #fff; --text: #0f172a; --accent: #2563eb; }
+    body.dark { --bg: #0b1220; --card: #111827; --text: #e5e7eb; --accent: #60a5fa; }
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); }
+    header { display: flex; justify-content: space-between; padding: 16px 24px; background: var(--card); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 12px; padding: 16px; }
+    .card { background: var(--card); border-radius: 12px; padding: 16px; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+    button { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Klinika Operatsion Panel</strong>
+    <button id="toggleTheme">Tungi/Kunduzgi</button>
+  </header>
+
+  <section class="grid">
+    <div class="card"><h3>Menejer</h3><p>Qoldiq va sarf summalari</p></div>
+    <div class="card"><h3>Bosh hamshira</h3><p>Hamshiralik sarfi nazorati</p></div>
+    <div class="card"><h3>Aptekachi</h3><p>Expiry va low-stock ogohlantirishlar</p></div>
+    <div class="card"><h3>Sanitarka</h3><p>Utilizatsiya tasklari navbati</p></div>
+  </section>
+
+  <script>
+    const btn = document.getElementById('toggleTheme');
+    btn.onclick = () => document.body.classList.toggle('dark');
+  </script>
+</body>
+</html>
